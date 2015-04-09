@@ -1,3 +1,4 @@
+from math import pow
 class Help():
     def run(self):
         print "Enter an integer that corresponds to the Eulor Project Number"
@@ -77,13 +78,24 @@ class Project5():
                 n +=1
         print n
         
+class Project6():
+    """
+    Find the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum.
+    """
+    def run(self):
+        n = 10
+        r = xrange(1, n+1)
+        a = sum(r)
+        print a * a - sum(i * i for i in r)
+        
 if __name__ == '__main__':
     projectList = {
     "Project1" : Project1,
     "Project2" : Project2,
     "Project3" : Project3,
     "Project4" : Project4,
-    "Project5" : Project5
+    "Project5" : Project5,
+    "Project6" : Project6
     }
     while True:
         projNum = raw_input("Please enter the Euler Project Number: ")
@@ -94,8 +106,9 @@ if __name__ == '__main__':
                 try:
                     proj = projectList[projNum]()
                     proj.run()
-                except:
+                except Exception as e:
                     print "I don't have a solution for that one yet"
+                    print e
             else:
                 break
 
@@ -105,6 +118,6 @@ if __name__ == '__main__':
                 h.run()
             else:
                 print "Please enter an Integer or -h for help"
-                """this is a git test-- 2"""
+                
         
     
