@@ -139,9 +139,10 @@ class Project8():
         n = 0
         for i in xrange(0, len(x)-12):
             m = 1
-            for q in xrange(i, i+13):
-                m = m * int(x[q])
-            if m > n: n = m
+            if 0 not in xrange(i, i+13):
+                for q in xrange(i, i+13):
+                    m = m * int(x[q])
+                if m > n: n = m
         print n
                 
 if __name__ == '__main__':
